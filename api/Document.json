@@ -368,7 +368,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -376,6 +376,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/alinkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-alinkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -745,7 +748,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -753,6 +756,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/bgColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-bgcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -1425,7 +1431,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/close",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-close-dev",
           "tags": [
-            "web-features:dom"
+            "web-features:document-write"
           ],
           "support": {
             "chrome": [
@@ -2670,6 +2676,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/designMode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-document-designmode-dev",
+          "tags": [
+            "web-features:dom"
+          ],
           "support": {
             "chrome": [
               {
@@ -3267,6 +3276,9 @@
       "execCommand": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/execCommand",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3318,6 +3330,9 @@
         "copy": {
           "__compat": {
             "description": "`copy` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -3354,6 +3369,9 @@
         "cut": {
           "__compat": {
             "description": "`cut` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -3390,6 +3408,9 @@
         "defaultParagraphSeparator": {
           "__compat": {
             "description": "`defaultParagraphSeparator` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -3427,6 +3448,9 @@
         "insertBrOnReturn": {
           "__compat": {
             "description": "`insertBrOnReturn` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -3759,6 +3783,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fgColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-fgcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -3978,6 +4005,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fragmentDirective",
           "spec_url": "https://wicg.github.io/scroll-to-text-fragment/#dom-document-fragmentdirective",
+          "tags": [
+            "web-features:scroll-to-text-fragment"
+          ],
           "support": {
             "chrome": {
               "version_added": "86"
@@ -3995,8 +4025,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/273466"
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -4631,6 +4660,9 @@
       "getBoxQuads": {
         "__compat": {
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-geometryutils-getboxquads",
+          "tags": [
+            "web-features:getboxquads"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -5561,6 +5593,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/linkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-linkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -5750,6 +5785,42 @@
           }
         }
       },
+      "moveBefore": {
+        "__compat": {
+          "tags": [
+            "web-features:move-before"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "133"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "mozSetImageElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/mozSetImageElement",
@@ -5789,7 +5860,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-open-dev",
           "tags": [
-            "web-features:dom"
+            "web-features:document-write"
           ],
           "support": {
             "chrome": [
@@ -6421,6 +6492,9 @@
       "queryCommandEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandEnabled",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6477,6 +6551,9 @@
       },
       "queryCommandIndeterm": {
         "__compat": {
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6521,6 +6598,9 @@
       "queryCommandState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandState",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6569,6 +6649,9 @@
       "queryCommandSupported": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandSupported",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6625,6 +6708,9 @@
       },
       "queryCommandValue": {
         "__compat": {
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7899,6 +7985,9 @@
             "https://drafts.csswg.org/cssom-view/#eventdef-document-scroll",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll"
           ],
+          "tags": [
+            "web-features:scroll-elements"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7983,6 +8072,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scrollingElement",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-scrollingelement",
+          "tags": [
+            "web-features:scroll-elements"
+          ],
           "support": {
             "chrome": {
               "version_added": "44"
@@ -8664,6 +8756,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/vlinkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-vlinkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -8782,6 +8877,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/write",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-write-dev",
+          "tags": [
+            "web-features:document-write"
+          ],
           "support": {
             "chrome": [
               {
@@ -8841,12 +8939,63 @@
             "standard_track": true,
             "deprecated": true
           }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": [
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document-write-steps",
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#:~:text=if%20value%20is%20a%20trustedhtml%20object"
+            ],
+            "tags": [
+              "web-features:document-write"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
         }
       },
       "writeln": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/writeln",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln-dev",
+          "tags": [
+            "web-features:document-write"
+          ],
           "support": {
             "chrome": [
               {
@@ -8921,6 +9070,51 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln",
+            "tags": [
+              "web-features:document-write"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

@@ -235,6 +235,9 @@
         "SVG_fonts": {
           "__compat": {
             "description": "SVG fonts",
+            "tags": [
+              "web-features:svg-discouraged"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1",
@@ -610,7 +613,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },

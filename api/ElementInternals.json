@@ -46,12 +46,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -69,7 +69,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -461,12 +461,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -484,7 +484,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -536,12 +536,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -559,7 +559,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -611,12 +611,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -634,7 +634,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -686,12 +686,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -709,7 +709,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -761,12 +761,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -784,7 +784,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -987,12 +987,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1010,7 +1010,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1257,7 +1257,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1275,7 +1275,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

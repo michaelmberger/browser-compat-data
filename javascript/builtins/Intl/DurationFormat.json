@@ -15,11 +15,11 @@
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "1.46"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -59,11 +59,11 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "1.46"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "136"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -103,11 +103,11 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "1.46"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "136"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -147,11 +147,11 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "1.46"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "136"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -191,11 +191,11 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "1.46"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "136"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -235,11 +235,11 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "1.46"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "136"
                 },
                 "firefox_android": "mirror",
                 "ie": {
