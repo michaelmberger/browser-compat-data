@@ -592,10 +592,27 @@ if (esMain(import.meta)) {
   const remote = exec(
     'git remote -v | grep "mdn/browser-compat-data" | awk \'{print $1}\' | uniq',
   );
+
+  /**
+   * Runs `git fetch` for a reference.
+   * @param ref - the reference to fetch.
+   * @returns Combined standard output/error of the command.
+   */
   const gitFetch = (ref: string) =>
     exec(`git fetch ${remote} ${ref} 2>/dev/null`);
+
+  /**
+   * Runs `git rev-parse` for a reference.
+   * @param ref - the reference to parse.
+   * @returns Standard output of the command.
+   */
   const gitRevParse = (ref: string) => exec(`git rev-parse ${ref}`);
 
+  /**
+   * Resolves and fetches the reference.
+   * @param ref - the reference to fetch and resolve.
+   * @returns Commit hash corresponding to the reference.
+   */
   const fetchAndResolve = (ref: string) => {
     if (ref.startsWith('origin/')) {
       const remoteRef = ref.slice('origin/'.length);
