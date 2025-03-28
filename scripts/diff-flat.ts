@@ -14,31 +14,6 @@ import { exec, walk } from '../utils/index.js';
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 
-interface Contents<T = any> {
-  base: T;
-  head: T;
-}
-
-/**
- * Get contents from base and head commits
- * Note: This does not detect renamed files
- * @param baseCommit Base commit
- * @param basePath Base path
- * @param headCommit Head commit
- * @param headPath Head path
- * @returns The contents of both commits
- */
-const getBaseAndHeadContents = <T>(
-  baseCommit: string,
-  basePath: string,
-  headCommit: string,
-  headPath: string,
-): Contents<T> => {
-  const base = JSON.parse(getFileContent(baseCommit, basePath));
-  const head = JSON.parse(getFileContent(headCommit, headPath));
-  return { base, head };
-};
-
 const BROWSER_NAMES = [
   'chrome',
   'chrome_android',
