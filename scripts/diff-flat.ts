@@ -14,6 +14,8 @@ import { exec, walk } from '../utils/index.js';
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 
+type Format = 'color' | 'html' | 'patch';
+
 const BROWSER_NAMES = [
   'chrome',
   'chrome_android',
@@ -182,13 +184,13 @@ const toArray = (value: any): any[] => {
  * @param lastKey the previous key
  * @param options Options
  * @param options.fill The number of characters to fill up to
- * @param options.html Whether to return HTML, otherwise plaintext
+ * @param options.format Whether to return HTML, otherwise plaintext
  * @returns diffed key
  */
 const diffKeys = (
   key: string,
   lastKey: string,
-  options: { fill?: number; html: boolean },
+  options: { fill?: number; format: Format },
 ): string => {
   const len = key.length;
   let fill = options.fill ?? 0;
@@ -210,8 +212,9 @@ const diffKeys = (
         const space = fill && len < fill ? ' '.repeat(fill - len) : '';
         fill = 0;
         return (
-          (options.html ? `<strong>${key}</strong>` : chalk`{blue ${key}}`) +
-          space
+          (options.format === 'html'
+            ? `<strong>${key}</strong>`
+            : chalk`{blue ${key}}`) + space
         );
       }
 
@@ -226,7 +229,7 @@ const diffKeys = (
  * @param head Head ref
  * @param options Options
  * @param options.group Whether to group by value, rather than the common feature
- * @param options.html Whether to output HTML, rather than plain-text
+ * @param options.format What output format to use ("color", "html" or "patch")
  * @param options.mirror Whether to apply mirroring, rather than ignore "mirror" values
  * @param options.transform Whether to apply transforms
  */
@@ -235,12 +238,12 @@ const printDiffs = (
   head = '',
   options: {
     group: boolean;
-    html: boolean;
+    format: Format;
     mirror: boolean;
     transform: boolean;
   },
 ): void => {
-  if (options.html) {
+  if (options.format === 'html') {
     console.log('<pre style="font-family: monospace">');
   }
 
@@ -304,7 +307,8 @@ const printDiffs = (
       keys.at(-1)?.split('.') ?? [],
     )[0]?.value.join('.');
 
-    const commonName = options.html ? `<h3>${prefix}</h3>` : `${prefix}`;
+    const commonName =
+      options.format === 'html' ? `<h3>${prefix}</h3>` : `${prefix}`;
 
     let lastKey = '';
 
@@ -345,11 +349,11 @@ const printDiffs = (
           // Note: removed/added is deliberately inversed here, to have additions first.
           const value = part.value.join('');
           if (part.removed) {
-            return options.html
+            return options.format == 'html'
               ? `<ins style="color: green">${value}</ins>`
               : chalk`{green ${value}}`;
           } else if (part.added) {
-            return options.html
+            return options.format == 'html'
               ? `<del style="color: red">${value}</del>`
               : chalk`{red ${value}}`;
           }
@@ -371,7 +375,7 @@ const printDiffs = (
           BROWSER_NAMES.includes(part),
         );
         const field = reverseKeyParts.find((part) => !/^\d+$/.test(part));
-        const groupKey = `${!browser ? '' : options.html ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
+        const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
         const groupValue = key
           .split('.')
           .map((part) => (part !== browser && part !== field ? part : '{}'))
@@ -381,7 +385,7 @@ const printDiffs = (
           .map((value) =>
             value !== '{}'
               ? value
-              : options.html
+              : options.format == 'html'
                 ? '<small>{}</small>'
                 : chalk`{dim \{\}}`,
           )
@@ -390,9 +394,10 @@ const printDiffs = (
         group.add(groupValue);
         groups.set(groupKey, group);
       } else {
-        const change = options.html
-          ? `${keyDiff} = ${value}`
-          : chalk`${keyDiff} = ${value}`;
+        const change =
+          options.format == 'html'
+            ? `${keyDiff} = ${value}`
+            : chalk`${keyDiff} = ${value}`;
         const group = groups.get(commonName) ?? new Set();
         group.add(change);
         groups.set(commonName, group);
@@ -468,7 +473,9 @@ const printDiffs = (
       console.log();
       lines.forEach((line) =>
         console.log(
-          options.html ? `<em>${line}</em>` : chalk`{italic ${line}}`,
+          options.format == 'html'
+            ? `<em>${line}</em>`
+            : chalk`{italic ${line}}`,
         ),
       );
     }
@@ -489,7 +496,7 @@ const printDiffs = (
         previousKey = null;
         console.log(values.join('\n'));
         const maxKeyLength = Math.max(...keys.map((key) => key.length));
-        if (options.html) {
+        if (options.format == 'html') {
           process.stdout.write(
             `<details><summary>${keys.length} ${keys.length === 1 ? 'path' : 'paths'}</summary>`,
           );
@@ -502,7 +509,7 @@ const printDiffs = (
           console.log(`  ${keyDiff}`);
           previousKey = key;
         }
-        if (options.html) {
+        if (options.format == 'html') {
           process.stdout.write('</details>');
         }
         printRefs(...values);
@@ -532,7 +539,7 @@ const printDiffs = (
     console.log('');
   }
 
-  if (options.html) {
+  if (options.format == 'html') {
     console.log('</pre>');
   }
 };
@@ -555,9 +562,11 @@ if (esMain(import.meta)) {
           type: 'string',
           default: 'HEAD',
         })
-        .option('html', {
-          type: 'boolean',
-          default: false,
+        .option('format', {
+          alias: 'f',
+          type: 'string',
+          default: 'plain',
+          choices: ['html', 'plain'],
         })
         .option('group', {
           type: 'boolean',
@@ -637,11 +646,11 @@ if (esMain(import.meta)) {
   options.base = fetchAndResolve(options.base);
   options.head = fetchAndResolve(options.head);
 
-  const { base, head, group, html, mirror, transform } = options;
+  const { base, head, group, format, mirror, transform } = options;
 
   printDiffs(getMergeBase(base, head), head, {
     group,
-    html,
+    format,
     mirror,
     transform,
   });
