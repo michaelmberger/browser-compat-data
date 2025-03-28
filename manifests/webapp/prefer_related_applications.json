@@ -1,25 +1,26 @@
 {
-  "css": {
-    "selectors": {
-      "scroll-marker-group": {
+  "manifests": {
+    "webapp": {
+      "prefer_related_applications": {
         "__compat": {
-          "description": "`::scroll-marker-group`",
-          "spec_url": "https://drafts.csswg.org/css-overflow-5/#scroll-marker-group-pseudo",
-          "tags": [
-            "web-features:scroll-markers"
-          ],
+          "mdn_url": "https://developer.mozilla.org/docs/Web/Progressive_web_apps/Manifest/Reference/prefer_related_applications",
+          "spec_url": "https://w3c.github.io/manifest/#prefer_related_applications-member",
           "support": {
             "chrome": {
-              "version_added": "135"
+              "version_added": false,
+              "notes": "`prefer_related_applications` must be `false` or not present for a web app to be installable."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "44"
             },
             "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false,
+              "notes": "The property parses, but has no effect."
+            },
             "ie": {
               "version_added": false
             },
