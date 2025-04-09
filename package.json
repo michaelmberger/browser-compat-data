@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "6.0.0",
+  "version": "6.0.4",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.ts",
   "type": "module",
@@ -51,7 +51,7 @@
     "@eslint/js": "^9.20.0",
     "@types/deep-diff": "~1.0.1",
     "@types/mocha": "~10.0.0",
-    "@types/node": "~22.13.0",
+    "@types/node": "~22.14.0",
     "@types/sinon": "^17.0.0",
     "@types/yargs": "~17.0.10",
     "ajv": "~8.17.1",
@@ -77,9 +77,8 @@
     "fast-json-stable-stringify": "~2.1.0",
     "fdir": "~6.4.0",
     "globals": "^16.0.0",
-    "husky": "^9.1.1",
     "json-schema-to-typescript": "~15.0.0",
-    "lint-staged": "^15.0.1",
+    "lefthook": "^1.11.7",
     "markdown-table": "^3.0.4",
     "marked": "^15.0.1",
     "mocha": "~11.1.0",
@@ -98,9 +97,7 @@
     "yargs": "~17.7.0"
   },
   "scripts": {
-    "postinstall": "(git rev-parse --is-inside-work-tree && npm run save-git-history) || echo 'not in Git worktree; skipping save-git-history'",
-    "save-git-history": "tsx scripts/save-git-history.ts",
-    "prepare": "(husky || true) && npm run gentypes && npm run build",
+    "prepare": "npm run gentypes && npm run build",
     "diff": "tsx scripts/diff.ts",
     "diff:flat": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/diff-flat.ts",
     "unittest": "NODE_ENV=test c8 mocha index.test.ts --require tsx  --recursive \"{,!(node_modules)/**}/*.test.ts\"",

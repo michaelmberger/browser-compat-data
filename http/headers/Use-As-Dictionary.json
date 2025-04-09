@@ -1,22 +1,22 @@
 {
-  "svg": {
-    "elements": {
-      "font-face-src": {
+  "http": {
+    "headers": {
+      "Use-As-Dictionary": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Element/font-face-src",
-          "spec_url": "https://www.w3.org/TR/SVG11/fonts.html#FontFaceSrcElement",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Use-As-Dictionary",
+          "spec_url": "https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-compression-dictionary#name-use-as-dictionary",
           "tags": [
-            "web-features:svg-discouraged"
+            "web-features:compression-dictionary-transport"
           ],
           "support": {
             "chrome": {
-              "version_added": "1",
-              "version_removed": "40"
+              "version_added": "130"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1917982"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -26,8 +26,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "3",
-              "version_removed": "16.4"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -35,9 +34,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       }
