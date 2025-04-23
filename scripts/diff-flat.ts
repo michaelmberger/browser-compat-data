@@ -328,7 +328,7 @@ const printDiffs = (
       );
 
       const splitRegexp =
-        /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)/;
+        /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
       let headValueForDiff = headValue;
       let baseValueForDiff = baseValue;
 
