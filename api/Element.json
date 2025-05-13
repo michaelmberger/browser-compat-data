@@ -894,6 +894,7 @@
       },
       "ariaActiveDescendantElement": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaActiveDescendantElement",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaactivedescendantelement",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1311,6 +1312,7 @@
       },
       "ariaControlsElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaControlsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariacontrolselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1386,6 +1388,7 @@
       },
       "ariaDescribedByElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaDescribedByElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariadescribedbyelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1461,6 +1464,7 @@
       },
       "ariaDetailsElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaDetailsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariadetailselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1536,6 +1540,7 @@
       },
       "ariaErrorMessageElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaErrorMessageElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaerrormessageelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1611,6 +1616,7 @@
       },
       "ariaFlowToElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaFlowToElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaflowtoelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1838,6 +1844,7 @@
       },
       "ariaLabelledByElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaLabelledByElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-arialabelledbyelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -2103,6 +2110,7 @@
       },
       "ariaOwnsElements": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaOwnsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaownselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -3005,7 +3013,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "18"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3121,8 +3129,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1675847"
+                "version_added": "129"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -3132,8 +3139,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/218665"
+                "version_added": "18.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3141,7 +3147,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -3244,7 +3250,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "139"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3262,7 +3268,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3880,7 +3886,7 @@
             },
             "firefox": {
               "version_added": "6",
-              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a `click` event for buttons other than the primary mouse button; previously, there were circumstances in which this would occur. One example: middle-clicking a link would send a `click` to the document's `&lt;html&gt;` element."
+              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a `click` event for buttons other than the primary mouse button; previously, there were circumstances in which this would occur. One example: middle-clicking a link would send a `click` to the document's `<html>` element."
             },
             "firefox_android": {
               "version_added": "6"
@@ -3924,8 +3930,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1675847"
+                "version_added": "129"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -3935,8 +3940,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/218665"
+                "version_added": "18.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3944,7 +3948,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -4460,8 +4464,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1675847"
+                "version_added": "129"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -4471,16 +4474,18 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/218665"
+                "version_added": "18.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/213953"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -5929,6 +5934,47 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "escapes_lt_gt_in_attributes": {
+          "__compat": {
+            "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
+            "support": {
+              "chrome": {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
         }
       },
       "gotpointercapture_event": {
@@ -6291,6 +6337,47 @@
               "deprecated": false
             }
           }
+        },
+        "escapes_lt_gt_in_attributes": {
+          "__compat": {
+            "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
+            "support": {
+              "chrome": {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
         }
       },
       "input_event": {
@@ -6438,7 +6525,7 @@
               "version_added": "4",
               "partial_implementation": true,
               "notes": [
-                "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a `&lt;table&gt;`, `&lt;tbody&gt;`, `&lt;thead&gt;`, or `&lt;tr&gt;` element.",
+                "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a `<table>`, `<tbody>`, `<thead>`, or `<tr>` element.",
                 "Only supported for [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), not all `Element` objects, such as [`SVGElement`](https://developer.mozilla.org/docs/Web/API/SVGElement)."
               ]
             },
@@ -7467,6 +7554,47 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "escapes_lt_gt_in_attributes": {
+          "__compat": {
+            "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
+            "support": {
+              "chrome": {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
           }
         }
       },
@@ -8647,7 +8775,7 @@
               {
                 "alternative_name": "mozRequestFullScreen",
                 "version_added": "9",
-                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a `&lt;frame&gt;` or `&lt;object&gt;` element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an `&lt;iframe&gt;` element with the `allowfullscreen` attribute can be displayed fullscreen."
+                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a `<frame>` or `<object>` element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an `<iframe>` element with the `allowfullscreen` attribute can be displayed fullscreen."
               }
             ],
             "firefox_android": "mirror",
@@ -8858,7 +8986,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13",
               "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a proposed specification change](https://github.com/w3c/pointerlock/pull/49)."
@@ -8909,12 +9040,17 @@
         "options_unadjustedMovement_parameter": {
           "__compat": {
             "description": "`options.unadjustedMovement` parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock#unadjustedmovement",
+            "spec_url": "https://w3c.github.io/pointerlock/#dom-pointerlockoptions-unadjustedmovement",
             "support": {
               "chrome": {
                 "version_added": "88",
                 "notes": "Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux."
               },
-              "chrome_android": "mirror",
+              "chrome_android": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/40290045"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -8936,7 +9072,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -10280,6 +10416,48 @@
             "experimental": false,
             "standard_track": false,
             "deprecated": true
+          }
+        }
+      },
+      "setHTML": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/sanitizer-api/#dom-element-sethtml",
+          "support": {
+            "chrome": {
+              "version_added": false,
+              "notes": "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "138",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.security.sanitizer.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
