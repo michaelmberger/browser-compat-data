@@ -7,7 +7,8 @@ import {
  * Execute a command
  * @param command The command to execute
  * @param opts The options to pass to execSync
- * @returns The output from the command
+ * @returns The output from the commands
+ * @deprecated Use `spawn()` instead.
  */
 export default (
   command: string,

@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -10,7 +9,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryDirectoryTask } from 'tempy';
 
-import { execAsync } from '../utils/index.js';
+import { execAsync, spawn } from '../utils/index.js';
 
 /**
  * Compare two references and print diff as Markdown or JSON
@@ -151,9 +150,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   // However, if `ref` is already checked out, then `git worktree add` fails. As
   // long as you haven't checked out a detached HEAD for `ref`, then
   // `git worktree add` for the hash succeeds.
-  const hash = execSync(`git rev-parse --short ${ref}`, {
-    encoding: 'utf-8',
-  }).trim();
+  const hash = spawn('git', ['rev-parse', '--short', ref]);
 
   const worktree = `__enumerating__${hash}`;
 
@@ -162,19 +159,23 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   }
 
   try {
-    execSync(`git worktree add ${worktree} ${hash}`);
+    spawn('git', ['worktree', 'add', worktree, hash]);
 
     try {
-      execSync('npm ci', { cwd: worktree });
+      spawn('npm', ['ci'], { cwd: worktree });
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(`npx tsx ./scripts/enumerate-features.ts --data-from=${worktree}`);
+    spawn('npx', [
+      'tsx',
+      './scripts/enumerate-features.ts',
+      `--data-from=${worktree}`,
+    ]);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
-    execSync(`git worktree remove ${worktree}`);
+    spawn('git', ['worktree', 'remove', worktree]);
   }
 };
 

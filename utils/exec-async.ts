@@ -5,6 +5,7 @@ import { promisify } from 'node:util';
  * Executes a command asynchronously.
  * @param command The command to execute asynchronously.
  * @returns The output of the command.
+ * @deprecated Use `spawnAsync()` instead (to be implemented).
  */
 export default async (command: string): Promise<string> => {
   const result = await promisify(exec)(command, { encoding: 'utf-8' });

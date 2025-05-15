@@ -13,7 +13,7 @@ import {
 export default (
   command: string,
   args: readonly string[],
-  opts?: SpawnSyncOptionsWithStringEncoding,
+  opts?: Omit<SpawnSyncOptionsWithStringEncoding, 'encoding' | 'shell'>,
 ): string => {
   const result = spawnSync(command, args, { encoding: 'utf8', ...opts });
 
@@ -27,5 +27,5 @@ export default (
     );
   }
 
-  return result.stdout.trim();
+  return result.stdout?.trim() || '';
 };
