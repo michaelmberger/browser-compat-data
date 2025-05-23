@@ -41,7 +41,7 @@
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "1"
           },
           "webview_ios": "mirror"
         },
@@ -239,9 +239,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -543,17 +541,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "≤37",
-                "version_removed": "64",
-                "partial_implementation": true,
-                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -893,7 +881,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/browsingTopics",
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": "126"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1111,9 +1099,7 @@
               "version_added": "4"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -2575,9 +2561,7 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -3039,10 +3023,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37",
-              "notes": "Before WebView 66, this method returned `null` when the element was a child of a host node. See [bug 40537452](https://crbug.com/40537452)."
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -3292,7 +3273,7 @@
                 "version_added": "69",
                 "notes": [
                   "From Firefox 82, nested calls are not supported (return `false`). See [bug 1634262](https://bugzil.la/1634262).",
-                  "Before Firefox 89, manipulating the content of `&lt;input&gt;` and `&lt;textarea&gt;` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
+                  "Before Firefox 89, manipulating the content of `<input>` and `<textarea>` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
                 ]
               },
               {
@@ -3581,15 +3562,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -3700,7 +3673,10 @@
                 "version_added": "22"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -4146,15 +4122,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "alternative_name": "webkitIsFullScreen",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4265,15 +4233,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4592,15 +4552,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4641,6 +4593,7 @@
               },
               {
                 "version_added": "13.1",
+                "version_removed": "14",
                 "partial_implementation": true,
                 "notes": "Implements an older version of the specification, see [bug 179536](https://webkit.org/b/179536)."
               }
@@ -4981,9 +4934,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -5031,9 +4982,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -5165,9 +5114,7 @@
               "version_added": "125"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": false
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -5237,9 +5184,7 @@
               "version_added": "4"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -5297,15 +5242,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "4.4.3"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -5787,6 +5724,7 @@
       },
       "moveBefore": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/moveBefore",
           "spec_url": "https://dom.spec.whatwg.org/#dom-parentnode-movebefore",
           "tags": [
             "web-features:move-before"
@@ -5928,6 +5866,48 @@
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
             ],
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "parseHTML_static": {
+        "__compat": {
+          "description": "`parseHTML` static method",
+          "spec_url": "https://wicg.github.io/sanitizer-api/#dom-document-parsehtml",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "139",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.security.sanitizer.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -6189,7 +6169,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -6238,7 +6221,10 @@
             "chrome": {
               "version_added": "37"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -6298,7 +6284,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -6782,6 +6771,7 @@
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
                 "partial_implementation": true,
                 "notes": "`querySelectorAll()` is supported, but only for CSS 2.1 selectors."
               }
@@ -6833,6 +6823,7 @@
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
                 "partial_implementation": true,
                 "notes": "`querySelectorAll()` is supported, but only for CSS 2.1 selectors."
               }
@@ -6953,9 +6944,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -8296,9 +8285,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -8619,13 +8606,14 @@
                 "version_added": "62"
               },
               {
-                "version_added": "33",
+                "prefix": "webkit",
+                "version_added": "13",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "13",
+                "version_added": "33",
+                "version_removed": "62",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               }
@@ -8637,6 +8625,7 @@
               },
               {
                 "version_added": "12",
+                "version_removed": "18",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               }
@@ -8656,13 +8645,14 @@
                 "version_added": "49"
               },
               {
-                "version_added": "20",
+                "prefix": "webkit",
+                "version_added": "15",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "15",
+                "version_added": "20",
+                "version_removed": "49",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
@@ -8678,13 +8668,14 @@
                 "version_added": "46"
               },
               {
-                "version_added": "20",
+                "prefix": "webkit",
+                "version_added": "14",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "14",
+                "version_added": "20",
+                "version_removed": "46",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
@@ -8701,11 +8692,13 @@
               },
               {
                 "version_added": "14",
+                "version_removed": "14.1",
                 "partial_implementation": true,
                 "notes": "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897)."
               },
               {
                 "version_added": "10.1",
+                "version_removed": "14",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897).",
@@ -8714,6 +8707,7 @@
               },
               {
                 "version_added": "7",
+                "version_removed": "10.1",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897).",
@@ -8724,22 +8718,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "4.4.3",
-                "partial_implementation": true,
-                "notes": "The `onvisibilitychange` event handler property is not supported."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37",
-                "partial_implementation": true,
-                "notes": "The `onvisibilitychange` event handler property is not supported."
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -8816,15 +8795,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "4.4.3"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {

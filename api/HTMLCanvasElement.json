@@ -95,7 +95,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "98"
+              "version_added": "99"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -134,7 +134,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "98"
+              "version_added": "99"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -424,6 +424,7 @@
                   },
                   {
                     "version_added": "75",
+                    "version_removed": "81",
                     "partial_implementation": true,
                     "notes": "ChromeOS only"
                   }
@@ -638,6 +639,7 @@
                   },
                   {
                     "version_added": "75",
+                    "version_removed": "81",
                     "partial_implementation": true,
                     "notes": "ChromeOS only"
                   }
@@ -931,6 +933,7 @@
                   },
                   {
                     "version_added": "75",
+                    "version_removed": "81",
                     "partial_implementation": true,
                     "notes": "ChromeOS only"
                   }
@@ -1341,9 +1344,7 @@
               "version_added": "3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1446,9 +1447,7 @@
               "samsunginternet_android": {
                 "version_added": "1.5"
               },
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {

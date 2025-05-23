@@ -3,7 +3,7 @@
     "elements": {
       "iframe": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/iframe",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element",
           "tags": [
             "web-features:iframe"
@@ -1089,10 +1089,10 @@
               ],
               "support": {
                 "chrome": {
-                  "version_added": "71"
+                  "version_added": "69"
                 },
                 "chrome_android": {
-                  "version_added": false
+                  "version_added": "105"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1647,7 +1647,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": "115"
+                "version_added": "126"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -2371,7 +2371,10 @@
                 "chrome": {
                   "version_added": "23"
                 },
-                "chrome_android": "mirror",
+                "chrome_android": {
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/40290045"
+                },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "≤49"

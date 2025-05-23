@@ -42,7 +42,7 @@
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "2"
             },
             "webview_ios": "mirror"
           },
@@ -171,9 +171,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -259,9 +257,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -386,9 +382,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -435,9 +429,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -525,9 +517,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -740,9 +730,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -789,9 +777,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1011,9 +997,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1139,9 +1123,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1383,6 +1365,7 @@
                   },
                   {
                     "version_added": "111",
+                    "version_removed": "129",
                     "partial_implementation": true,
                     "notes": "Only supports SVG images, not iframes."
                   }
@@ -1570,7 +1553,7 @@
                     "value_to_set": "true"
                   }
                 ],
-                "impl_url": "https://bugzil.la/1736914"
+                "impl_url": "https://bugzil.la/1822176"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1598,7 +1581,6 @@
         "range_syntax": {
           "__compat": {
             "description": "Range syntax from Media Queries Level 4",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#syntax_improvements_in_level_4",
             "tags": [
               "web-features:media-query-range-syntax"
             ],
@@ -1614,6 +1596,7 @@
                 },
                 {
                   "version_added": "63",
+                  "version_removed": "102",
                   "partial_implementation": true,
                   "notes": "Only supports range notations where the feature name comes before any value `(width &#62; 500px)`"
                 }
@@ -1662,8 +1645,9 @@
                 },
                 {
                   "version_added": "3.5",
+                  "version_removed": "8",
                   "partial_implementation": true,
-                  "notes": "Supports [`&lt;integer&gt;`](https://developer.mozilla.org/docs/Web/CSS/integer) values only."
+                  "notes": "Supports [`<integer>`](https://developer.mozilla.org/docs/Web/CSS/integer) values only."
                 }
               ],
               "firefox_android": "mirror",
@@ -1865,9 +1849,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1985,9 +1967,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2031,9 +2011,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2077,9 +2055,7 @@
                 "version_added": "1"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {

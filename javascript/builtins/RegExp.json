@@ -223,7 +223,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "24.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1124,9 +1124,7 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": {
-                  "version_added": "≤37"
-                },
+                "webview_android": "mirror",
                 "webview_ios": "mirror"
               },
               "status": {

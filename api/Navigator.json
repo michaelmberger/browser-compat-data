@@ -83,12 +83,12 @@
               {
                 "version_added": "64",
                 "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
+                "notes": "Only on macOS and Windows."
               },
               {
                 "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
+                "version_removed": "64",
+                "notes": "Only on Windows."
               }
             ],
             "firefox_android": {
@@ -555,10 +555,11 @@
           "support": {
             "chrome": [
               {
-                "version_added": "129"
+                "version_added": "128"
               },
               {
                 "version_added": "89",
+                "version_removed": "128",
                 "partial_implementation": true,
                 "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
               }
@@ -1095,7 +1096,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": "128"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1336,9 +1337,7 @@
               "version_added": "≤3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1551,15 +1550,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "37"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1642,6 +1633,7 @@
               },
               {
                 "version_added": "80",
+                "version_removed": "84",
                 "partial_implementation": true,
                 "notes": "Supports checking of Android app installation."
               }
@@ -1836,12 +1828,12 @@
               {
                 "version_added": "64",
                 "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
+                "notes": "Only on macOS and Windows."
               },
               {
                 "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
+                "version_removed": "64",
+                "notes": "Only on Windows."
               }
             ],
             "firefox_android": {
@@ -2933,7 +2925,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": "≤37",
+              "version_added": "4.4",
               "partial_implementation": true,
               "notes": "Can incorrectly return true, see [bug 41369933](https://crbug.com/41369933)."
             },
@@ -5278,10 +5270,11 @@
           "support": {
             "chrome": [
               {
-                "version_added": "129"
+                "version_added": "128"
               },
               {
                 "version_added": "89",
+                "version_removed": "128",
                 "partial_implementation": true,
                 "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
               }
@@ -6126,6 +6119,7 @@
               },
               {
                 "version_added": "16.4",
+                "version_removed": "18.4",
                 "partial_implementation": true,
                 "notes": "Does not work in standalone Home Screen Web Apps. See [bug 254545](https://webkit.org/b/254545#c32)."
               }

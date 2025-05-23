@@ -1,22 +1,16 @@
 {
-  "css": {
-    "properties": {
-      "line-height-step": {
+  "http": {
+    "headers": {
+      "Sec-Speculation-Tags": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/line-height-step",
-          "spec_url": "https://drafts.csswg.org/css-rhythm/#line-height-step",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Sec-Speculation-Tags",
+          "spec_url": "https://wicg.github.io/nav-speculation/prefetch.html#sec-speculation-tags-header",
           "tags": [
-            "web-features:rhythmic-sizing"
+            "web-features:speculation-rules"
           ],
           "support": {
             "chrome": {
-              "version_added": "60",
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--enable-blink-features=CSSSnapSize"
-                }
-              ]
+              "version_added": "136"
             },
             "chrome_android": "mirror",
             "edge": "mirror",

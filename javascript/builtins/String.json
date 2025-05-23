@@ -1309,6 +1309,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -2430,6 +2431,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -2545,6 +2547,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -2888,15 +2891,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "66"
-                },
-                {
-                  "alternative_name": "trimRight",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2973,15 +2968,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "66"
-                },
-                {
-                  "alternative_name": "trimLeft",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {

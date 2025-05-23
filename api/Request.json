@@ -196,7 +196,7 @@
             "description": "`init.browsingTopics` parameter",
             "support": {
               "chrome": {
-                "version_added": "115"
+                "version_added": "126"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -1102,6 +1102,7 @@
               },
               {
                 "version_added": "11.1",
+                "version_removed": "14.1",
                 "partial_implementation": true,
                 "notes": "The method exists but always rejects with `NotSupportedError`. See [bug 215671](https://webkit.org/b/215671)."
               }
