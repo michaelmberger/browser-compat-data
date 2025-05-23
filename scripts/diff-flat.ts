@@ -13,6 +13,7 @@ import { exec, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
+import dataFolders from './lib/data-folders.js';
 
 type Format = 'color' | 'html' | 'patch';
 
@@ -250,7 +251,12 @@ const printDiffs = (
   const groups = new Map<string, Set<string>>();
 
   for (const status of getGitDiffStatuses(base, head)) {
-    if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
+    if (
+      !(
+        status.headPath.endsWith('.json') &&
+        dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
+      )
+    ) {
       continue;
     }
 
