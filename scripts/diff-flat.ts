@@ -225,6 +225,41 @@ const diffKeys = (
 };
 
 /**
+ * Deeply merges a source object into a target object.
+ * @param target The target object to merge into.
+ * @param source The source object to merge.
+ * @returns the target object with source merged.
+ */
+const deepMerge = (target: any, source: any): any => {
+  if (typeof target !== 'object' || target === null) {
+    return source;
+  }
+  if (typeof source !== 'object' || source === null) {
+    return source;
+  }
+
+  for (const key of Object.keys(source)) {
+    const sourceValue = source[key];
+    const targetValue = target[key];
+
+    if (Array.isArray(sourceValue) && Array.isArray(targetValue)) {
+      target[key] = targetValue.concat(sourceValue);
+    } else if (
+      typeof sourceValue === 'object' &&
+      typeof targetValue === 'object' &&
+      sourceValue !== null &&
+      targetValue !== null
+    ) {
+      target[key] = deepMerge({ ...targetValue }, sourceValue);
+    } else {
+      target[key] = sourceValue;
+    }
+  }
+
+  return target;
+};
+
+/**
  * Print diffs
  * @param base Base ref
  * @param head Head ref
@@ -250,6 +285,9 @@ const printDiffs = (
 
   const groups = new Map<string, Set<string>>();
 
+  const baseContents = {};
+  const headContents = {};
+
   for (const status of getGitDiffStatuses(base, head)) {
     if (
       !(
@@ -260,157 +298,166 @@ const printDiffs = (
       continue;
     }
 
-    const baseContents = (
+    const baseFileContents = (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     ) as CompatData;
-    const headContents = (
+    const headFileContents = (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}
     ) as CompatData;
 
-    if (options.mirror) {
-      for (const feature of walk(undefined, baseContents)) {
-        applyMirroring(feature);
-      }
-      for (const feature of walk(undefined, headContents)) {
-        applyMirroring(feature);
-      }
-    }
+    deepMerge(baseContents, baseFileContents);
+    deepMerge(headContents, headFileContents);
+  }
+
+  if (options.mirror) {
     for (const feature of walk(undefined, baseContents)) {
-      addVersionLast(feature);
+      applyMirroring(feature);
     }
     for (const feature of walk(undefined, headContents)) {
-      addVersionLast(feature);
+      applyMirroring(feature);
     }
-    if (options.transform) {
-      for (const feature of walk(undefined, baseContents)) {
-        transformMD(feature);
+  }
+  for (const feature of walk(undefined, baseContents)) {
+    addVersionLast(feature);
+  }
+  for (const feature of walk(undefined, headContents)) {
+    addVersionLast(feature);
+  }
+  if (options.transform) {
+    for (const feature of walk(undefined, baseContents)) {
+      transformMD(feature);
+    }
+    for (const feature of walk(undefined, headContents)) {
+      transformMD(feature);
+    }
+  }
+
+  const baseData = flattenObject(baseContents);
+  const headData = flattenObject(headContents);
+
+  const keys = [
+    ...new Set<string>([
+      ...Object.keys(baseData),
+      ...Object.keys(headData),
+    ]).values(),
+  ].sort();
+
+  if (!keys.length) {
+    console.log('✔ No data file changed.');
+    return;
+  }
+
+  const prefix = diffArrays(
+    keys.at(0)?.split('.') ?? [],
+    keys.at(-1)?.split('.') ?? [],
+  )[0]?.value.join('.');
+
+  const commonName =
+    options.format === 'html' ? `<h3>${prefix}</h3>` : `${prefix}`;
+
+  let lastKey = '';
+
+  for (const key of keys) {
+    const baseValue = JSON.stringify(baseData[key] ?? null);
+    const headValue = JSON.stringify(headData[key] ?? null);
+    if (baseValue === headValue) {
+      continue;
+    }
+    if (!lastKey) {
+      lastKey = key;
+    }
+    const keyDiff = diffKeys(
+      key.slice(prefix.length),
+      lastKey.slice(prefix.length),
+      options,
+    );
+
+    const splitRegexp =
+      /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
+    let headValueForDiff = headValue;
+    let baseValueForDiff = baseValue;
+
+    if (baseValue == 'null') {
+      baseValueForDiff = '';
+      if (headValue == '"mirror"' || headValue == '"false"') {
+        // Ignore initial "mirror"/"false" values.
+        headValueForDiff = '';
       }
-      for (const feature of walk(undefined, headContents)) {
-        transformMD(feature);
-      }
+    } else if (headValue == 'null') {
+      headValueForDiff = '';
     }
 
-    const baseData = flattenObject(baseContents);
-    const headData = flattenObject(headContents);
+    const valueDiff = diffArrays(
+      headValueForDiff.split(splitRegexp),
+      baseValueForDiff.split(splitRegexp),
+    )
+      .map((part) => {
+        // Note: removed/added is deliberately inversed here, to have additions first.
+        const value = part.value.join('');
+        if (part.removed) {
+          return options.format == 'html'
+            ? `<ins style="color: green">${value}</ins>`
+            : chalk`{green ${value}}`;
+        } else if (part.added) {
+          return options.format == 'html'
+            ? `<del style="color: red">${value}</del>`
+            : chalk`{red ${value}}`;
+        }
 
-    const keys = [
-      ...new Set<string>([
-        ...Object.keys(baseData),
-        ...Object.keys(headData),
-      ]).values(),
-    ].sort();
+        return value;
+      })
+      .join('');
 
-    if (!keys.length) {
+    const value = valueDiff;
+
+    if (!value.length) {
+      // e.g. null => "mirror"
       continue;
     }
 
-    const prefix = diffArrays(
-      keys.at(0)?.split('.') ?? [],
-      keys.at(-1)?.split('.') ?? [],
-    )[0]?.value.join('.');
-
-    const commonName =
-      options.format === 'html' ? `<h3>${prefix}</h3>` : `${prefix}`;
-
-    let lastKey = '';
-
-    for (const key of keys) {
-      const baseValue = JSON.stringify(baseData[key] ?? null);
-      const headValue = JSON.stringify(headData[key] ?? null);
-      if (baseValue === headValue) {
-        continue;
-      }
-      if (!lastKey) {
-        lastKey = key;
-      }
-      const keyDiff = diffKeys(
-        key.slice(prefix.length),
-        lastKey.slice(prefix.length),
-        options,
+    if (options.group) {
+      const reverseKeyParts = key.split('.').reverse();
+      const browser = reverseKeyParts.find((part) =>
+        BROWSER_NAMES.includes(part),
       );
-
-      const splitRegexp =
-        /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
-      let headValueForDiff = headValue;
-      let baseValueForDiff = baseValue;
-
-      if (baseValue == 'null') {
-        baseValueForDiff = '';
-        if (headValue == '"mirror"' || headValue == '"false"') {
-          // Ignore initial "mirror"/"false" values.
-          headValueForDiff = '';
-        }
-      } else if (headValue == 'null') {
-        headValueForDiff = '';
-      }
-
-      const valueDiff = diffArrays(
-        headValueForDiff.split(splitRegexp),
-        baseValueForDiff.split(splitRegexp),
-      )
-        .map((part) => {
-          // Note: removed/added is deliberately inversed here, to have additions first.
-          const value = part.value.join('');
-          if (part.removed) {
-            return options.format == 'html'
-              ? `<ins style="color: green">${value}</ins>`
-              : chalk`{green ${value}}`;
-          } else if (part.added) {
-            return options.format == 'html'
-              ? `<del style="color: red">${value}</del>`
-              : chalk`{red ${value}}`;
-          }
-
-          return value;
-        })
-        .join('');
-
-      const value = valueDiff;
-
-      if (!value.length) {
-        // e.g. null => "mirror"
-        continue;
-      }
-
-      if (options.group) {
-        const reverseKeyParts = key.split('.').reverse();
-        const browser = reverseKeyParts.find((part) =>
-          BROWSER_NAMES.includes(part),
-        );
-        const field = reverseKeyParts.find((part) => !/^\d+$/.test(part));
-        const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
-        const groupValue = key
-          .split('.')
-          .map((part) => (part !== browser && part !== field ? part : '{}'))
-          .reverse()
-          .filter((value, index) => index > 0 || value !== '{}')
-          .reverse()
-          .map((value) =>
-            value !== '{}'
-              ? value
-              : options.format == 'html'
-                ? '<small>{}</small>'
-                : chalk`{dim \{\}}`,
-          )
-          .join('.');
-        const group = groups.get(groupKey) ?? new Set();
-        group.add(groupValue);
-        groups.set(groupKey, group);
-      } else {
-        const change =
-          options.format == 'html'
-            ? `${keyDiff} = ${value}`
-            : chalk`${keyDiff} = ${value}`;
-        const group = groups.get(commonName) ?? new Set();
-        group.add(change);
-        groups.set(commonName, group);
-      }
-      lastKey = key;
+      const field = reverseKeyParts.find((part) => !/^\d+$/.test(part));
+      const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
+      const groupValue = key
+        .split('.')
+        .map((part) => (part !== browser && part !== field ? part : '{}'))
+        .reverse()
+        .filter((value, index) => index > 0 || value !== '{}')
+        .reverse()
+        .map((value) =>
+          value !== '{}'
+            ? value
+            : options.format == 'html'
+              ? '<small>{}</small>'
+              : chalk`{dim \{\}}`,
+        )
+        .join('.');
+      const group = groups.get(groupKey) ?? new Set();
+      group.add(groupValue);
+      groups.set(groupKey, group);
+    } else {
+      const change =
+        options.format == 'html'
+          ? `${keyDiff} = ${value}`
+          : chalk`${keyDiff} = ${value}`;
+      const group = groups.get(commonName) ?? new Set();
+      group.add(change);
+      groups.set(commonName, group);
     }
+    lastKey = key;
+  }
+
+  if (groups.size === 0) {
+    console.log('✔ No changes.');
+    return;
   }
 
   const originalEntries: [string, string[]][] = [...groups.entries()].map(
