@@ -23,7 +23,7 @@ export default (
 
   if (result.status !== 0) {
     throw new Error(
-      `The command '${command}' returned non-zero exit status ${result.status}: ${result.stderr}`,
+      `The command '${command}' returned non-zero exit status ${result.status}: ${result.stderr || result.stdout}`,
     );
   }
 
