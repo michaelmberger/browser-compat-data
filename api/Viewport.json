@@ -1,37 +1,19 @@
 {
   "api": {
-    "CreateMonitor": {
+    "Viewport": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/CreateMonitor",
-        "spec_url": "https://webmachinelearning.github.io/writing-assistance-apis/#createmonitor",
+        "spec_url": "https://drafts.csswg.org/css-viewport/#the-viewport-interface",
         "support": {
           "chrome": {
             "version_added": "138"
           },
-          "chrome_android": {
-            "version_added": false
-          },
-          "deno": {
-            "version_added": false
-          },
-          "edge": {
-            "version_added": "138",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "#edge-llm-summarization-api-for-phi-mini",
-                "value_to_set": "Enabled"
-              }
-            ]
-          },
+          "chrome_android": "mirror",
+          "edge": "mirror",
           "firefox": {
             "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
-            "version_added": false
-          },
-          "nodejs": {
             "version_added": false
           },
           "oculus": "mirror",
@@ -51,39 +33,20 @@
           "deprecated": false
         }
       },
-      "downloadprogress_event": {
+      "segments": {
         "__compat": {
-          "description": "`downloadprogress` event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CreateMonitor/downloadprogress_event",
-          "spec_url": "https://webmachinelearning.github.io/writing-assistance-apis/#dom-createmonitor-ondownloadprogress",
+          "spec_url": "https://drafts.csswg.org/css-viewport/#dom-viewport-segments",
           "support": {
             "chrome": {
               "version_added": "138"
             },
-            "chrome_android": {
-              "version_added": false
-            },
-            "deno": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "138",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#edge-llm-summarization-api-for-phi-mini",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": false
-            },
-            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",

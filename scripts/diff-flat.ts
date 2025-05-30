@@ -9,7 +9,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { CompatData, SimpleSupportStatement } from '../types/types.js';
-import { exec, walk } from '../utils/index.js';
+import { spawn, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
@@ -646,30 +646,32 @@ if (esMain(import.meta)) {
 
   if (
     options.head === 'HEAD' &&
-    exec('git branch --show-current') === 'flat-diff'
+    spawn('git', ['branch', '--show-current']) === 'flat-diff'
   ) {
     // Workaround: Compare first positional parameter against origin/main.
     [options.base, options.head] = [options.head, 'origin/main'];
   }
 
-  const remote = exec(
-    'git remote -v | grep "mdn/browser-compat-data" | awk \'{print $1}\' | uniq',
-  );
+  const remote =
+    spawn('git', ['remote', '-v'])
+      .split('\n')
+      .find((line) => line.includes('mdn/browser-compat-data'))
+      ?.split(/\s+/, 2)
+      .at(0) ?? 'origin';
 
   /**
    * Runs `git fetch` for a reference.
    * @param ref - the reference to fetch.
    * @returns Combined standard output/error of the command.
    */
-  const gitFetch = (ref: string) =>
-    exec(`git fetch ${remote} ${ref} 2>/dev/null`);
+  const gitFetch = (ref: string) => spawn('git', ['fetch', remote, ref]);
 
   /**
    * Runs `git rev-parse` for a reference.
    * @param ref - the reference to parse.
    * @returns Standard output of the command.
    */
-  const gitRevParse = (ref: string) => exec(`git rev-parse ${ref}`);
+  const gitRevParse = (ref: string) => spawn('git', ['rev-parse', ref]);
 
   /**
    * Resolves and fetches the reference.

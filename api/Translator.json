@@ -1,23 +1,29 @@
 {
   "api": {
-    "LargestContentfulPaint": {
+    "Translator": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint",
-        "spec_url": "https://w3c.github.io/largest-contentful-paint/#sec-largest-contentful-paint-interface",
-        "tags": [
-          "web-features:largest-contentful-paint"
-        ],
+        "spec_url": "https://webmachinelearning.github.io/translation-api/#translator",
         "support": {
           "chrome": {
-            "version_added": "77"
+            "version_added": "138"
           },
-          "chrome_android": "mirror",
-          "edge": "mirror",
+          "chrome_android": {
+            "version_added": false
+          },
+          "deno": {
+            "version_added": false
+          },
+          "edge": {
+            "version_added": false
+          },
           "firefox": {
-            "version_added": "122"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
+            "version_added": false
+          },
+          "nodejs": {
             "version_added": false
           },
           "oculus": "mirror",
@@ -32,139 +38,37 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "element": {
+      "availability_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/element",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-element",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
+          "description": "`availability()` static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/availability_static",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-availability",
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "138"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "122"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "id": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/id",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-id",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "77"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "122"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "loadTime": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/loadTime",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-loadtime",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "77"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "122"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "paintTime": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/paint-timing/#dom-painttimingmixin-painttime",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "140"
-            },
-            "firefox_android": "mirror",
-            "ie": {
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -185,20 +89,32 @@
           }
         }
       },
-      "presentationTime": {
+      "create_static": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/paint-timing/#dom-painttimingmixin-presentationtime",
+          "description": "`create()` static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/create_static",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-create",
           "support": {
             "chrome": {
+              "version_added": "138"
+            },
+            "chrome_android": {
               "version_added": false
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "140"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -219,24 +135,32 @@
           }
         }
       },
-      "renderTime": {
+      "destroy": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/renderTime",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-rendertime",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
+          "description": "`destroy()` instance method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/destroy",
+          "spec_url": "https://webmachinelearning.github.io/writing-assistance-apis/#dom-destroyablemodel-destroy",
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "138"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "122"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -251,106 +175,38 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        },
-        "cross-origin": {
-          "__compat": {
-            "description": "Cross-origin",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/renderTime#cross-origin_image_render_time",
-            "tags": [
-              "web-features:largest-contentful-paint"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "133"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        }
-      },
-      "size": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/size",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-size",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "77"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "122"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "toJSON": {
+      "inputQuota": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/toJSON",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-tojson",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
+          "description": "`inputQuota` property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/inputQuota",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-inputquota",
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "138"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "122"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -365,30 +221,38 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "url": {
+      "measureInputUsage": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/url",
-          "spec_url": "https://w3c.github.io/largest-contentful-paint/#dom-largestcontentfulpaint-url",
-          "tags": [
-            "web-features:largest-contentful-paint"
-          ],
+          "description": "`measureInputUsage()` instance method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/measureInputUsage",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-measureinputusage",
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "138"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "122"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -403,7 +267,191 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sourceLanguage": {
+        "__compat": {
+          "description": "`sourceLanguage` property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/sourceLanguage",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-sourcelanguage",
+          "support": {
+            "chrome": {
+              "version_added": "138"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "targetLanguage": {
+        "__compat": {
+          "description": "`targetLanguage` property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/targetLanguage",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-targetlanguage",
+          "support": {
+            "chrome": {
+              "version_added": "138"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "translate": {
+        "__compat": {
+          "description": "`translate()` instance method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/translate",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-translate",
+          "support": {
+            "chrome": {
+              "version_added": "138"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "translateStreaming": {
+        "__compat": {
+          "description": "`translateStreaming()` instance method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Translator/translateStreaming",
+          "spec_url": "https://webmachinelearning.github.io/translation-api/#dom-translator-translatestreaming",
+          "support": {
+            "chrome": {
+              "version_added": "138"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
