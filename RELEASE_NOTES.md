@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.21](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.21)
+
+June 5, 2025
+
+### Additions
+
+- `browsers.samsunginternet_android.releases.28.0` ([#26981](https://github.com/mdn/browser-compat-data/pull/26981))
+
+### Statistics
+
+- 10 contributors have changed 30 files with 252 additions and 208 deletions in 14 commits ([`v6.0.20...v6.0.21`](https://github.com/mdn/browser-compat-data/compare/v6.0.20...v6.0.21))
+- 17,197 total features
+- 1,158 total contributors
+- 5,271 total stargazers
+
 ## [v6.0.20](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.20)
 
 June 3, 2025
